@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no,minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="x5-fullscreen" content="true">
+  <meta name="full-screen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <meta name="wap-font-scale" content="no">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <title>Document</title>
+
+  <style>
+    @media screen and (min-width: 640px) {
+        html {font-size: 20px;}
+    }
+     
+    @media screen and (min-width: 720px) {
+        html {font-size: 22.5px;}
+    }
+     
+    @media screen and (min-width: 800px) {
+        html {font-size: 25px;}
+    }
+     
+    @media screen and (min-width: 880px) {
+        html {font-size: 27.5px;}
+    }
+     
+    @media screen and (min-width: 960px) {
+        html {font-size: 30px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span></span>
+    <h3>汽车之家{{iscrollTop}}</h3>
+    <div id="advertise" style="" class="adv05 fn-mt fn-mb">
+      <a href="#">
+        <img src="http://adm3.autoimg.cn/admdfs/g12/M06/69/3B/wKgH01f7QquAWL6DAAB6E3ODO9k027.jpg" title="">
+        <i class="icon-load"></i>
+      </a>
+    </div>
+    <div class="search">
+      <input type="text" required placeholder="最新最热车型">
+      <button>搜索</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <div id="tabs">
+      <div class="tab">
+        <a  v-link="{ path: '/home', activeClass: 'active'}" :class="{active:currentView == 'byBrand'}" data-belong="byBrand">按品牌</a>
+        <a  v-link="{ path: '/about', activeClass: 'active'}" :class="{active:currentView == 'byOptions'}" data-belong="byOptions">按条件</a>
+      </div>
+      <template id="by-brand">
+        <div id="hot-brand">
+          <h3 v-touch:tap="sayhi">热门品牌</h3>
+          <ul id="ul_hotBrandList" class="clearfix"> <li v="1"><img src="http://x.autoimg.cn/m/news/brand/1.jpg"><br><span id="sp_1">大众</span></li> <li v="3"><img src="http://x.autoimg.cn/m/news/brand/3.jpg"><br><span id="sp_3">丰田</span></li> <li v="8"><img src="http://x.autoimg.cn/m/news/brand/8.jpg"><br><span id="sp_8">福特</span></li> <li v="12"><img src="http://x.autoimg.cn/m/news/brand/12.jpg"><br><span id="sp_12">现代</span></li> <li v="13"><img src="http://x.autoimg.cn/m/news/brand/13.jpg"><br><span id="sp_13">标致</span></li> <li v="14"><img src="http://x.autoimg.cn/m/news/brand/14.jpg"><br><span id="sp_14">本田</span></li> <li v="15"><img src="http://x.autoimg.cn/m/news/brand/15.jpg"><br><span id="sp_15">宝马</span></li> <li v="25"><img src="http://x.autoimg.cn/m/news/brand/25.jpg"><br><span id="sp_25">吉利汽车</span></li> <li v="26"><img src="http://x.autoimg.cn/m/news/brand/26.jpg"><br><span id="sp_26">奇瑞</span></li> <li v="33"><img src="http://x.autoimg.cn/m/news/brand/33.jpg"><br><span id="sp_33">奥迪</span></li> </ul>
+        </div>
+        <div id="hot-cars">
+          <h3>热门车</h3>
+          <div style="overflow-x: scroll;"><a href="http://m.autohome.com.cn/3788/#pvareaid=2028144"><img src="http://car3.m.autoimg.cn/cardfs/product/g18/M14/50/ED/160x120_0_q30_autohomecar__wKgH2VcK_T-ALdMbAAebOIcc4mA331.jpg"><br>
+          博越</a><a href="http://m.autohome.com.cn/3204/#pvareaid=2028144"><img src="http://car3.m.autoimg.cn/cardfs/product/g22/M01/BF/7E/160x120_0_q30_autohomecar__wKjBwVbf8t6Ab5SaAAZpyQcmTzQ371.jpg"><br>
+          长安CS75</a><a href="http://m.autohome.com.cn/3677/#pvareaid=2028144"><img src="http://car2.m.autoimg.cn/cardfs/product/g22/M0B/FD/1C/160x120_0_q30_autohomecar__wKgFW1bxHFaASr_0AAgV6fh5dfY535.jpg"><br>
+          宝骏560</a><a href="http://m.autohome.com.cn/496/#pvareaid=2028144"><img src="http://car2.m.autoimg.cn/cardfs/product/g18/M09/EF/86/160x120_0_q30_autohomecar__wKgH2VemCWKAUbuBAAgh_dP5XIo352.jpg"><br>
+          迈腾</a><a href="http://m.autohome.com.cn/135/#pvareaid=2028144"><img src="http://car2.m.autoimg.cn/cardfs/product/g6/M0F/70/4B/160x120_0_q30_autohomecar__wKgH3FcpyCaAbOnhAAcqpKPkrf4198.jpg"><br>
+          思域</a><a href="http://m.autohome.com.cn/3691/#pvareaid=2028144"><img src="http://car0.m.autoimg.cn/car/upload/2015/5/4/160x120_0_q30_201505041729052644178110.jpg"><br>
+          传祺GS4</a><a href="http://m.autohome.com.cn/4080/#pvareaid=2028144"><img src="http://car2.m.autoimg.cn/cardfs/product/g15/M0C/A2/82/160x120_0_q30_autohomecar__wKgH5VdeXUWAAMVuAAT-oS2RPms384.jpg"><br>
+          荣威RX5</a><a href="http://m.autohome.com.cn/3893/#pvareaid=2028144"><img src="http://car2.m.autoimg.cn/cardfs/product/g21/M10/32/A2/160x120_0_q30_autohomecar__wKgFWlcKgcCARiKwAAiC00vcgQk795.jpg"><br>
+          长安CX70</a></div>
+          
+        </div>
+        <div id="classify" v-el:classify>         
+            <div v-for="group in data" class="group" data-group="{{group.letter}}">
+              <h3>{{group.letter}}</h3>
+              <ul>
+                <li v-for="item in group.data" class="clearfix" data-BrandId={{item.brandId}} v-touch:tap="loadTargetBrand">
+                  <img data-src="{{item.img}}" alt="">
+                  <strong>{{item.text}}</strong>
+                </li>
+              </ul>
+            </div>          
+        </div>
+        <div id="jump"  v-el:jump v-show="iscrollTop>1000">
+          <ul>
+            <li v-for="item in data" v-touch:tap="jumpto">{{item.letter | upper}}</li>
+            <li>{{iscrollTop}}</li>
+          </ul>
+        </div>
+        <div id="targetBrand" v-show="targetBrand" transition="targetBrand">
+          <h3>{{tgbrandTit}}</h3>
+          <ul>
+            <li v-for="item in lists"><a href="" class="clearfix"><img src="{{item.img}}" alt=""><h4>{{item.SeriesName}}</h4><p>{{item.FctMinMaxPrice}}</p></a></li>
+          </ul>
+        </div>
+        <div class="mask" v-show="targetBrand" v-touch:tap="hideTargetBrand" transition="mask"></div>
+      </template>
+      <template id="by-options">
+        <h3>价格</h3>
+        <div id="on-price" class="isbtn" data-title="FctMinMaxPrice">
+          <span v-touch:tap="active" class="btn-col4" data-value="0_5">5万以下</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="5_8">5-8万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="8_10">8-10万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="10_15">10-15万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="15_20">15-20万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="20_25">20-25万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="25_30">25-30万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="30_40">30-40万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="50_100">50-100万</span>
+          <span v-touch:tap="active" class="btn-col4" data-value="100_0">100万以上</span>         
+        </div>
+        <h3>级别</h3>
+        <div id="on-level" class="clearfix isIcon" data-title="LevelId">
+          <div class="level-item" v-touch:tap="active" data-value="1"><i class="icon-findcar icon-weixing"></i><br>微型车</div>
+          <div class="level-item" v-touch:tap="active" data-value="2"><i class="icon-findcar icon-xiaoxing"></i><br>小型车</div>
+          <div class="level-item" v-touch:tap="active" data-value="3"><i class="icon-findcar icon-jincou"></i><br>紧凑车型</div>
+          <div class="level-item" v-touch:tap="active" data-value="4"><i class="icon-findcar icon-zhongxing"></i><br>中型车</div>
+          <div class="level-item" v-touch:tap="active" data-value="5"><i class="icon-findcar icon-zdaxing"></i><br>中大型车</div>
+          <div class="level-item" v-touch:tap="active" data-value="6"><i class="icon-findcar icon-daxing"></i><br>大型车</div>
+          <div class="level-item" v-touch:tap="active" data-value="101"><i class="icon-findcar icon-suv"></i><br>SUV</div>
+          <div class="level-item" v-touch:tap="active" data-value="8"><i class="icon-findcar icon-mpv"></i><br>MPV</div>
+          <div class="level-item" v-touch:tap="active" data-value="7"><i class="icon-findcar icon-paoche"></i><br>跑车</div>
+          <div id="subSuvLevel">
+            <ul class="spec">
+              <li><span v-touch:tap="active" data-value="102">不限</span></li>
+              <li><span v-touch:tap="active" data-value="16">小型SUV</span></li>
+              <li><span v-touch:tap="active" data-value="17">紧凑型SUV</span></li>
+              <li><span v-touch:tap="active" data-value="18">中型SUV</span></li>
+              <li><span v-touch:tap="active" data-value="19">中大型SUV</span></li>
+              <li><span v-touch:tap="active" data-value="20">大型SUV</span></li>
+            </ul>
+          </div>
+          <div class="level-item" v-touch:tap="active" data-value="14"><i class="icon-findcar icon-pika"></i><br>皮卡</div>
+          <div class="level-item" v-touch:tap="active" data-value="11"><i class="icon-findcar icon-weimian"></i><br>微面</div>
+          <div class="level-item" v-touch:tap="active" data-value="12"><i class="icon-findcar icon-weika"></i><br>微卡</div>
+          <div class="level-item" v-touch:tap="active" data-value="13"><i class="icon-findcar icon-qingke"></i><br>轻客</div>
+        </div>
+        <h3>品牌</h3>
+        <div id="on-brand" class="isbtn" >
+          <span class="btn-col4" v-for="item in hotBrand" v-touch:tap="active" data-value={{item.brandID}}>{{item.brandName}}</span>
+          <span class="btn-col1" v-touch:tap="toggleBrandBar">从全部品牌中选择></span>
+        </div>
+        <div class="match"><a href="searched.html" v-touch:tap="postFilter">匹配</a></div>
+        <div id="loadBrand" data-title="BrandId" v-show="BrandBar" transition="loadBrand">
+          <div class="head"><h2>品牌</h2><span class="clearAll" v-touch:tap="clearAllactive">清除全部</span></div>
+          <div class="scroll">
+            <div v-for="group in data" class="group" data-group="{{group.letter}}">
+              <h3>{{group.letter}}</h3>
+              <ul id="lbb">
+                <li v-for="item in group.data" v-touch:tap="active" data-value="{{item.brandId}}"><i class="checkIcon"></i><span>{{item.text}}</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="jump">
+            <ul>
+              <li v-for="item in data" v-touch:tap="jumpto">{{item.letter | upper}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mask" v-show="BrandBar" v-touch:tap="toggleBrandBar" transition="mask"></div>
+      </template>
+      <div>
+        <router-view></router-view>
+      </div>
+    </div>
+  </main>
+</body>
+<script type="text/javascript" src = "js/require.js" data-main="main.js"></script>
+
+</html>

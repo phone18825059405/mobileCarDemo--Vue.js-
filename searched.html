@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta name="wap-font-scale" content="no">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script type="text/javascript"  src = "js/vue.min.js" ></script>
+	<script type="text/javascript"  src = "js/lazyload.js" ></script>
+	<script  src="js/data-json.js" ></script>
+	<style>
+	body{
+		background: #f5f5f5;
+		color: #444;
+		font-size: 1rem;
+	}
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	header{
+		position: relative;
+		text-align: center;
+		background: #2f75bb;
+		color: #fff;
+		height: 3rem;
+		line-height: 3rem;
+	}
+	header span{
+		position: absolute;
+		left: 0.4rem;
+		top: 0;
+	}
+	.clearfix:after { 
+		content: "." ; 
+		display: block ;
+		height: 0 ;
+		clear: both ;
+		visibility: hidden ;
+	}
+	.clearfix{ display:block; }
+
+	.list{
+		padding: 0.6rem;
+		margin-bottom: 0.5rem;
+		background: #fff;
+	}
+	li>a{
+		position: relative;
+		display: block;
+	}
+	li img{
+		float: left;
+		margin-right:0.4rem;
+		height: 144px;
+		background-image: url("pixel.gif");	
+	}
+	li h4{
+		color: #444;
+		font-size: 1.2rem;
+		line-height: 1.6
+	}
+	li .price{
+		color: #f60;
+		margin-top: 0.4rem;
+		font-size: 1rem;
+		line-height: 1.6
+	}
+	li .infor{
+		color: #acacac;
+		margin-top: 0.4rem;
+		font-size: 1.2rem;
+		line-height: 1.6
+		position: relative;
+	}
+	li i{
+	    width: 0.6rem;
+	    height: 0.6rem;
+	    /* color: #000; */
+	    border-left: 4px solid #000;
+	    border-top: 4px solid #000;
+	    display: block;
+	    position: absolute;
+	    right: 0;
+	    top: 50%;
+	    transform: rotateZ(135deg);
+	    margin-top: -0.3rem;
+	}
+	.infor em{
+		position: absolute;
+		right: 0;
+	    background-color: #ccc;
+	    padding: 0.1rem  0.6rem;
+	    border-radius: 0.2rem;
+	    border-radius: 1rem;
+   		font-style: normal;
+   		color: #fff;
+   		font-size: 1rem;
+	}
+	ul{
+		list-style: none;
+	}
+	#sortBar {
+		font-size: 0;
+		border-bottom: 2px solid #2f75bb;
+	}
+	#sortBar span{
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		font-size: 1.2rem;
+		height: 3rem;
+		line-height: 3rem;
+		background: #fff;
+	}
+	#sortBar .active{
+		color: #f60;
+	}
+	</style>
+	<style type="text/css">
+		@media screen and (min-width: 640px) {
+	        html {font-size: 20px;}
+	    }
+	     
+	    @media screen and (min-width: 720px) {
+	        html {font-size: 22.5px;}
+	    }
+	     
+	    @media screen and (min-width: 800px) {
+	        html {font-size: 25px;}
+	    }
+	     
+	    @media screen and (min-width: 880px) {
+	        html {font-size: 27.5px;}
+	    }
+	     
+	    @media screen and (min-width: 960px) {
+	        html {font-size: 30px;}
+	    }      
+	</style>
+</head>
+<body>
+	<header>
+		<span>返回</span>
+		<h3>筛选结果</h3>
+	</header>
+	<main>
+		<div id="sortBar">
+			<span @click="def" :class="{'active': cur == '1'}">默认</span>
+			<span @click="changesv" :class="{'active': cur == '2'}">价格</span>
+		</div>
+		<ul id="imglists">
+			<template id="lists">
+				<li v-for="item in data | filterBy loadfilter | orderBy sortBy sortvalue" class="clearfix list" data-level="{{item.LevelId}}" data-price="{{item.FctMinMaxPrice}}" data-brand="{{item.BrandId}}">
+					<a href="#" class="clearfix">
+						<img data-src="{{item.img}}"  alt="">
+						<h4>{{item.SeriesName}}</h4>
+						<p class="price">{{item.FctMinMaxPrice}}</p>
+						<p class="infor">{{item.BrandName}}/{{item.LevelName}}<em>{{item.count}}款车型</em></p>
+						<i></i>
+					</a>
+				</li>
+			</template>
+			<list :data="lists"></list>
+		</ul>
+	</main>
+	<script type="text/javascript">
+
+		var t = new Vue({
+			el:"body",
+			data:{
+				lists:data,
+				level:17,
+				cur:1,
+			},
+			methods:{
+				changesv:function(){
+					this.$children[0].sortBy = this.$children[0].sortFun;
+					this.$children[0].sortvalue *= -1;
+					//this.sortvalue * -1;
+					//console.log(this.sortvalue)
+					this.cur = 2;
+				},
+				def:function(){
+					this.$children[0].sortBy = 'BrandId'
+					this.cur = 1;
+				}
+			},
+			ready:function(){
+				var options = window.location.search;
+			},
+			components:{
+				list:{
+					template:"#lists",
+					props:{
+						data:[Array]
+					},
+					data:function(){
+						return {
+							filterdata:{},
+							sortBy:'BrandId',
+							sortvalue:1,
+						}
+						/*"FctMinMaxPrice":["10_15","15_20","20_25","25_30"],
+								"LevelId":["4"],
+								"BrandId":["1","3","8"]*/
+					},
+					methods:{
+						loadfilter:function(itemlist){
+							var reg = new RegExp(/[_]/);
+							var totallyPass = true;
+							for(var props in this.filterdata){
+								if(totallyPass == false) return;
+
+								var me = this.filterdata;
+								var pass = false;
+								var _break = false; //记录属性的子属性匹配次数，例LevelID的子属性，如果有一个属性匹配0次直接跳过
+								me[props].forEach(function(item,index){
+									if(pass == true)return;
+
+									if(reg.test(item)){ //价格
+										var nums = item.split('_');
+										var _nums = itemlist[props].match(/\d+(.\d+)/g)
+										if((nums[1]*1)>(_nums[1]*1) && (nums[0]*1)<(_nums[0]*1)){
+											//console.log(nums[1]>_nums[1]);
+											//console.log(nums[0]*1 < _nums[0]*1);
+											pass = true;
+											totallyPass = true;
+										}else{
+											totallyPass = false;
+										}
+									}else{
+										if(itemlist[props] == item){
+											pass = true;
+											totallyPass = true;
+											//console.log(totallyPass)
+										}else{
+											totallyPass = false;
+										}
+										//console.log(itemlist[props] +'|||'+ props)
+									}
+									//console.log(me[props].length-1)
+								})								
+							}
+							if(totallyPass == true){
+								return true;
+							}
+						},
+						sortFun:function(a,b){
+							var aa = a.FctMinMaxPrice.match(/[\d.]+/g)[0]*1;
+							var bb = b.FctMinMaxPrice.match(/[\d.]+/g)[0]*1;
+							return aa - bb;
+						},
+						
+					},
+					created:function(){
+						var str = window.location.search;
+						if(!str.length)return
+
+						str = str.slice(1,window.location.search.length-2).split("&&")						
+						var that = this;
+						//var str = "?FctMinMaxPrice=10_15|15_20|20_25|25_30&&LevelId=4&&BrandId=1|3|8".slice(1).split('&&')
+						str.forEach(function(item, index){
+							var prop = item.split('=');
+							console.log(prop[0])
+							console.log(prop[1].split('|'));
+							console.log(that.filterdata)
+							that.filterdata[prop[0]] = prop[1].split('|');
+						})
+
+					}
+				}
+			},
+		})
+	</script>
+	<script type="text/javascript">
+	 lazyload({       
+				id:"imglists",
+				lazyTime:200,
+				lazyRange:100
+		    });
+	</script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+html,body{
+    height: 100%;
+  }
+    body{
+      font-family: "Î¢ÈíÑÅºÚ";
+      color: #444;
+      background: #f5f5f5;
+      overflow: scroll;
+    }
+    header h3{
+      text-align: center;
+      background: #2f75bb;
+      height: 3rem;
+      line-height: 3rem;
+      color: #fff;
+    }
+    #advertise img{
+      width: 100%;
+      margin: 0.4rem 0;
+    }
+    .search{
+      background: #fff;
+        padding: 0 5.3125rem 0 0.5rem;
+          background-color: #fff;
+        border: solid #acacac 1px;
+        position: relative;
+        margin: 0.4rem 1rem;
+    }
+    .search input[type="text"] {
+        display: block;
+        width: 100%;
+        height: 3rem;
+        padding: 0.3125rem 0;
+        background: none;
+        border: 0;
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.5rem;
+    }
+    .search button {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        display: block;
+        width: 4rem;
+        height: 3rem;
+        padding: 0.5rem 0;
+        font-size: 1.125rem;
+        color: #fff;
+        line-height: 1;
+        background-color: #2f75bb;
+        border: solid #2f75bb 1px;
+        border-radius: 0.125rem;
+    }
+    #tabs{
+      margin-top: 1rem;
+      background: #fff;
+    }
+    #tabs .tab {
+      font-size: 0;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    #tabs .tab a{
+      display: inline-block;
+      width: 50%;
+      font-size: 1.4rem;
+      line-height: 3rem;
+      height: 3rem;
+      color: #444;
+    }
+    #tabs .tab .active{
+      color: #2f75bb;
+      border-bottom: 4px solid #2f75bb;
+      font-weight: 600;
+    }
+    #hot-brand ul li {
+        float: left;
+        width: 20%;
+        padding: 0.25rem 0;
+        font-size: 0.75rem;
+        color: #444;
+        text-align: center;
+        font-size: 1rem;
+    }
+    #hot-brand {
+      background: #fff;
+    }
+    #tabs h3{
+      font-weight: 300;
+      background: #f5f5f5;
+      padding-left: 1rem;
+      font-size: 1rem;
+      line-height: 2;
+    }
+    #hot-cars{
+      font-size: 0;
+      white-space: nowrap;
+    }
+    #hot-cars a{
+        display: inline-block;
+        width: 8rem;
+        padding: 1rem 0;
+        font-size: 1rem;
+        color: #444;
+        text-align: center;
+        vertical-align: top;
+    }
+    #classify img{
+      background-image: url("../pixel.gif");
+    }
+    #classify .group li{
+      height: 5rem;
+      line-height: 5rem;
+    }
+    #classify .group img{
+      float: left;
+      margin: 0 0.6rem;
+      height: 100%;
+      padding: 0.5rem 0;
+    }
+    #classify .group strong{
+      display: block;
+        margin-left: 5rem;
+        border-bottom: 1px solid #ccc;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+    #jump {
+        position: fixed;
+      right: 1rem;
+      visibility: visible;
+      opacity: 1;
+      top: 50%;
+      z-index: 6;
+    }
+    #jump ul li{
+        width: 2rem;
+        text-align: center;
+        padding: 0.3rem 0;
+    }
+    #on-price{
+      padding: 1rem;
+      font-size: 0;
+    }
+    
+    .isbtn .active:before, .isbtn .active:after{
+        position: absolute;
+        right: -0.4rem;
+        top: -0.4rem;
+    }
+    .isbtn .active:before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 0.5rem;
+        height: 0.2rem;
+        border-left: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        transform: rotate(-35deg);
+        z-index: 4;
+        right: -0.1rem;
+        top: -0.1rem;
+    }
+    .isbtn .active:after{
+      content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: #2f75bb;
+        border-radius: 50%;
+    }
+    .isbtn .active{
+      color: #2f75bb;
+      border-color: #2f75bb;
+    }  
+
+    .isIcon>.active{
+      color: #2f75bb;
+    }
+    .isIcon>.active:before, .isIcon>.active:after{
+        position: absolute;
+        right: 1.2rem;
+        top: -0.4rem;
+    }
+    .isIcon>.active:before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 0.5rem;
+        height: 0.2rem;
+        border-left: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        transform: rotate(-35deg);
+        z-index: 4;
+        right: 1.5rem;
+        top: -0.1rem;
+    }
+    .isIcon>.active:after{
+      content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: #2f75bb;
+        border-radius: 50%;
+    }
+    #subSuvLevel .active{
+      border-color: #fff;
+    }
+    .btn-col4{
+      text-align: center;
+        width: 23%;
+        display: inline-block;
+        font-size: 1rem;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid #acacac;
+        background: #f5f5f5;
+        border-radius: 0.2rem;
+        margin: 0.6rem 1%;
+        line-height: 2.4rem;
+        position: relative;
+    }
+    .btn-col1{
+      text-align: center;
+        width: 98%;
+        display: inline-block;
+        font-size: 1rem;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid #acacac;
+        background: #f5f5f5;
+        border-radius: 0.2rem;
+        margin: 0.6rem 1%;
+        line-height: 2.4rem;
+    }
+    .level-item{
+      float: left;
+      width: 33.33%;
+      font-style: normal;
+      text-align: center;
+      margin: 0.8rem 0;
+      position: relative;
+    }
+    .icon-findcar{
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+    .active .icon-findcar:before{
+      background-position-x:-6rem; 
+    }
+    .icon-findcar:before{
+        content: "";
+        display: inline-block;
+          width: 6rem;
+        height: 2rem;
+        background: url(../icon-findcar-v20160321.png) no-repeat;
+        background-size: 12rem auto;
+    }
+    .icon-weixing:before{
+        background-position: 0 -12.4rem;
+    }
+    .icon-xiaoxing:before{
+        background-position: 0 -14.8rem;
+    }
+    .icon-jincou:before{
+        background-position: 0 -17.2rem;
+    }
+    .icon-zhongxing:before{
+        background-position: 0 -19.6rem;
+    }
+    .icon-zdaxing:before{
+        background-position: 0 -22rem;
+    }
+    .icon-daxing:before{
+        background-position: 0 -24.4rem;
+    }
+    .icon-suv:before{
+        background-position: 0 -26.8rem;
+    }
+    .icon-mpv:before{
+        background-position: 0 -29.2rem;
+    }
+    .icon-paoche:before{
+        background-position: 0 -31.8rem;
+    }
+    .icon-pika:before{
+        background-position: 0 -34rem;
+    }
+    .icon-weimian:before{
+        background-position: 0 -36.3rem;
+    }
+    .icon-weika:before{
+        background-position: 0 -38.7rem;
+    }
+    .icon-qingke:before{
+        background-position: 0 -41.3rem;
+    }
+    #subSuvLevel{
+      position: relative;
+      clear: both;
+        background: #374053;
+        color: #fff;
+    }
+    #subSuvLevel:before{
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        border-bottom: 1rem solid #374053;
+        position: absolute;
+        top: -0.6rem;
+        left: 4.4rem;
+    }
+    #subSuvLevel ul{
+      font-size: 0;
+      padding: 0.4rem;
+    }
+    #subSuvLevel ul li{
+      display: inline-block;
+      width: 25%;     
+      line-height: 3rem;
+      padding: 0.4rem;
+    }
+    #subSuvLevel ul li span{
+      font-size: 1rem;
+      display: block;
+      text-align: center;
+      background: #525b6f;
+        border: solid #525b6f 1px;
+      border-radius: 0.2rem;
+    }
+
+    .fade-transition {
+      transition: opacity 1s ease;
+    }
+    .fade-enter, .fade-leave {
+      opacity: 0;
+    }
+    #loadBrand{
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60%;
+      background:#fff;
+      z-index: 10;
+    }
+    .loadBrand-transition{
+      transition:all .3s ease;
+    }
+    .loadBrand-enter, .loadBrand-leave{
+      transform:translateX(100%);
+    }
+    #loadBrand h2{
+      text-align: center;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+    #loadBrand .head{
+      position: relative;
+      line-height: 3rem;
+      border-bottom: 2px solid #2f75bb;
+    }
+    .head .clearAll{
+      position: absolute;
+      top: 0;
+      left: 0.4rem;
+      font-size: 1.1rem;
+      color: #2f75bb;
+    }
+    #loadBrand ul li{
+      line-height: 3rem;
+      height: 3rem;     
+      font-size: 1rem;
+      color: #444;
+      border-bottom: 1px solid #ccc;
+    }
+    #loadBrand .jump{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -20rem;
+    }
+    #loadBrand .jump li{
+      line-height: 2rem;
+      height: 2rem;
+      border: none;
+      text-align: center;
+      width: 2rem;
+    }
+    #loadBrand .scroll{
+        height: calc(100% - 3rem);
+        overflow: scroll;
+    } 
+    .checkIcon{
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: #f2f2f2;
+      border-radius: 50%;
+      line-height: 3rem;
+        margin-top: 0.7rem;
+        float: left;
+        position: relative;
+        margin-left:0.6rem;
+        margin-right:1rem;
+    }
+    .checkIcon:before{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0.4rem;
+      left: 0.3rem;
+      width: 0.8rem;
+      height: 0.4rem;
+      border-left: 4px solid #fff;
+      border-bottom: 4px solid #fff;
+      transform:rotate(-35deg);
+    }
+
+    .active .checkIcon{
+      background: #2f75bb;
+    }
+    /*.mask{
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      z-index: 8;
+    }*/
+    #targetBrand{
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60%;
+      background:#fff;
+      z-index: 10;
+    }
+    .targetBrand-transition{
+      transition:all .3s ease;
+    }
+    .targetBrand-enter, .targetBrand-leave{
+      transform:translateX(100%);
+    }
+    #targetBrand ul li{
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+    #targetBrand ul li a{
+        position: relative;
+        display: block;
+        font-size: 1.2rem;
+    }
+    #targetBrand ul li a img{
+        float: left;
+        margin-right: 1rem;
+    }
+    #targetBrand ul li a h4{
+        margin-top: 0.2rem;
+        color: #444;
+        font-weight: 400;
+    }
+    #targetBrand ul li a p{
+        margin-top: 0.5rem;
+        color: #f60;
+    }
+    /**/
+    .mask-transition {
+      transition: all .3s ease;
+      opacity: .7;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      z-index: 8;
+    }
+    .mask-enter, .mask-leave {
+      opacity: 0;
+    }
+    #targetBrand ul{
+      height: calc(100% - 2rem);
+      overflow: scroll;
+    }
+    .match{
+    }
+    .match a{
+      display: block;
+      height: 3.4rem;
+      line-height: 3.4rem;
+      text-align: center;
+      color: #fff;
+      margin: 1rem;
+      background: #2f75bb;
+      font-size: 1.2rem;
+    }
